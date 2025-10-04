@@ -1,4 +1,9 @@
 # hello_world
+
+Nama: Ananda Rahmawati
+
+NIM: 2341720048
+
 A new Flutter project.
 
 ![Screenshot hello_world](images/01.png)
