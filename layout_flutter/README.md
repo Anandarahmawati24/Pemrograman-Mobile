@@ -1,16 +1,35 @@
 # layout_flutter
+# Praktikum Mobile Jobsheet 6
 
-A new Flutter project.
+**NIM:** 2341720048
+**Nama:** Ananda Rahmawati
 
-## Getting Started
+## Praktikum 1: Membangun Layout di Flutter
+![Layout](images/6_1.png)
 
-This project is a starting point for a Flutter application.
+## Praktikum 2: Implementasi button row
+![Button](images/6_2.png)
 
-A few resources to get you started if this is your first Flutter project:
+## Praktikum 3: Implementasi text section
+![Text](images/6_3.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Praktikum 4: Implementasi image section
+![Image](images/6_4.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Tugas Praktikum 1
+
+## Aligning widgets
+### Row
+![Image](images/t1_1.png)
+
+### Column
+![Image](images/t1_2.png)
+
+## Sizing widgets & Packing widgets
+![Image](images/t1_5.png)
+
+## Nesting rows and columns
+![Image](images/t1_6.png)
+
+## final result
+![Image](images/t1_7.png)

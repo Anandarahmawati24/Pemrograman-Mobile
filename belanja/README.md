@@ -1,16 +1,22 @@
 # belanja
+# Praktikum Mobile Jobsheet 6 Tugas 2
 
-A new Flutter project.
+**NIM:** 2341720048
+**Nama:** Ananda Rahmawati 
 
-## Getting Started
+## Praktikum 5: Membangun Navigasi di Flutter
 
-This project is a starting point for a Flutter application.
+### Langkah 1-7
+![Layout](images/t2_1.png)
 
-A few resources to get you started if this is your first Flutter project:
+### Tugas Praktikum 2 nomor 3 menambahkan atribut foto produk, stok, dan rating (Gridview)
+![Layout](images/t2_2.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Tugas Praktikum 2 nomor 4 Implementasi Hero Widget
+![Layout](images/t2_5.gif)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Tugas Praktikum 2 nomor 5 Modifikasi Tampilan
+![Layout](images/t2_3.png)
+
+### Tugas Praktikum 2 nomor 6 Implementasi go_router
+![Layout](images/t2_4.gif)
