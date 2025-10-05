@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Image.asset('images/pic1.jpg', width: 100, height: 100),
