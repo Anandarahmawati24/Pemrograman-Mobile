@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import '../models/item.dart';
 
 class ItemPage extends StatelessWidget {
+  final Item item;
+  const ItemPage({super.key, required this.item});
+
   @override
   Widget build(BuildContext context) {
-    final item = ModalRoute.of(context)!.settings.arguments as Item;
-
     return Scaffold(
       appBar: AppBar(title: Text(item.name)),
       body: Padding(
@@ -14,13 +15,10 @@ class ItemPage extends StatelessWidget {
           children: [
             Hero(
               tag: 'product-${item.name}',
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  item.imagePath,
-                  height: 200,
-                  fit: BoxFit.cover,
-                ),
+              child: Image.asset(
+                item.imagePath,
+                height: 200,
+                fit: BoxFit.cover,
               ),
             ),
             const SizedBox(height: 16),
