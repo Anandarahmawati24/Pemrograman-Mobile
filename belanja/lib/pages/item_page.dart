@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:belanja/models/item.dart';
+import '../models/item.dart';
 
 class ItemPage extends StatelessWidget {
   @override
@@ -14,10 +14,13 @@ class ItemPage extends StatelessWidget {
           children: [
             Hero(
               tag: 'product-${item.name}',
-              child: Image.asset(
-                item.imagePath,
-                height: 200,
-                fit: BoxFit.cover,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  item.imagePath,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             const SizedBox(height: 16),
