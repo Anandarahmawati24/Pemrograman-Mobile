@@ -27,12 +27,12 @@ class MyApp extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image.asset('images/pic1.jpg', width: 100, height: 100),
-                Image.asset( 'images/pic2.jpg', width: 100, height: 100),
-                Image.asset('images/pic3.jpg', width: 100, height: 100),
+                Expanded(child: Image.asset('images/pic1.jpg')),
+                Expanded(flex:2, child: Image.asset('images/pic2.jpg')),
+                Expanded(child: Image.asset('images/pic3.jpg')),
               ],
             ),
           ],
