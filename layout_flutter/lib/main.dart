@@ -53,7 +53,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout: Ananda Rahmawati (2341720048)',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(children: [titleSection, buttonSection,textSection]),
+        body: ListView(children: [ 
+          Image.asset('images/bromo.jpg',
+          width: 600,height: 240,
+          fit: BoxFit.cover),
+          titleSection, 
+          buttonSection,
+          textSection]),
       ),
     );
   }
