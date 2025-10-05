@@ -9,6 +9,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final titleText = const Text(
+      'Pavlova',
+      style: TextStyle(fontWeight: FontWeight.w800, fontSize: 32),
+    );
+
+    final subTitle = const Text(
+      'Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlova.',
+      style: TextStyle(fontSize: 16, color: Colors.black54),
+    );
+
     final stars = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -21,7 +31,7 @@ class MyApp extends StatelessWidget {
     );
 
     final ratings = Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -45,16 +55,14 @@ class MyApp extends StatelessWidget {
       fontWeight: FontWeight.w800,
       fontFamily: 'Roboto',
       letterSpacing: 0.5,
-      fontSize: 18,
+      fontSize: 16,
       height: 2,
     );
 
-    // DefaultTextStyle.merge() allows you to create a default text
-    // style that is inherited by its child and all subsequent children.
     final iconList = DefaultTextStyle.merge(
       style: descTextStyle,
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.only(top: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -84,59 +92,38 @@ class MyApp extends StatelessWidget {
       ),
     );
 
-    return MaterialApp(
-      title: 'Hello World with Images',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Hello World Layout')),
-        body: SingleChildScrollView(
-          child: Column(
-          children: [
-            // Text Hello World
-            Container(
-              color: Colors.white,
-              padding: const EdgeInsets.all(16),
-              child: const Center(
-                child: Text(
-                  'Hello World',
-                  style: TextStyle(fontSize: 32, color: Colors.black87),
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            // Row dengan 3 gambar yang proporsional
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1, // kotak
-                    child: Image.asset('images/pic1.jpg', fit: BoxFit.cover),
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: AspectRatio(
-                    aspectRatio: 2 / 1, // lebih lebar
-                    child: Image.asset('images/pic2.jpg', fit: BoxFit.cover),
-                  ),
-                ),
-                Expanded(
-                  child: AspectRatio(
-                    aspectRatio: 1, // kotak
-                    child: Image.asset('images/pic3.jpg', fit: BoxFit.cover),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 16),
-            ratings,
-            iconList,
-          ],
-        ),
+    final leftColumn = Container(
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [titleText, subTitle, ratings, iconList],
       ),
+    );
+
+    final card = Card(
+      margin: const EdgeInsets.all(16),
+      child: Row(
+        children: [
+          Flexible(flex: 2, child: leftColumn),
+          Expanded(
+            flex: 3,
+            child: Image.asset(
+              'images/pic1.jpg',
+              fit: BoxFit.cover,
+              height: 200,
+            ),
+          ),
+        ],
+      ),
+    );
+
+    return MaterialApp(
+      title: 'Flutter Layout Basics',
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Flutter Layout Demo')),
+        body: SingleChildScrollView(
+          child: Column(children: [const SizedBox(height: 20), card]),
+        ),
       ),
     );
   }
