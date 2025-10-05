@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: const Text('Hello World Layout')),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            // Text Hello World
             Container(
               color: Colors.white,
               padding: const EdgeInsets.all(16),
@@ -26,13 +26,46 @@ class MyApp extends StatelessWidget {
                 ),
               ),
             ),
+
             const SizedBox(height: 20),
+
+            // Row dengan 3 gambar yang proporsional
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Expanded(child: Image.asset('images/pic1.jpg')),
-                Expanded(flex:2, child: Image.asset('images/pic2.jpg')),
-                Expanded(child: Image.asset('images/pic3.jpg')),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1, // kotak
+                    child: Image.asset('images/pic1.jpg', fit: BoxFit.cover),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: AspectRatio(
+                    aspectRatio: 2 / 1, // lebih lebar
+                    child: Image.asset('images/pic2.jpg', fit: BoxFit.cover),
+                  ),
+                ),
+                Expanded(
+                  child: AspectRatio(
+                    aspectRatio: 1, // kotak
+                    child: Image.asset('images/pic3.jpg', fit: BoxFit.cover),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 16),
+
+            // Row bintang
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.star, color: Colors.green[500]),
+                Icon(Icons.star, color: Colors.green[500]),
+                Icon(Icons.star, color: Colors.green[500]),
+                const Icon(Icons.star, color: Colors.black),
+                const Icon(Icons.star, color: Colors.black),
               ],
             ),
           ],
