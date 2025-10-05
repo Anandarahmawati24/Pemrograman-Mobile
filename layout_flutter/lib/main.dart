@@ -53,10 +53,23 @@ class MyApp extends StatelessWidget {
       title: 'Flutter layout: Ananda Rahmawati (2341720048)',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(children: [titleSection, buttonSection]),
+        body: Column(children: [titleSection, buttonSection,textSection]),
       ),
     );
   }
+
+  Widget get textSection => Container(
+    padding: const EdgeInsets.all(32),
+    child: const Text(
+      'Carilah teks di internet yang sesuai '
+      'dengan foto atau tempat wisata yang ingin '
+      'Anda tampilkan. '
+      'Tambahkan nama dan NIM Anda sebagai '
+      'identitas hasil pekerjaan Anda. '
+      'Selamat mengerjakan 🙂.',
+      softWrap: true,
+    ),
+  );
 
 
   Column _buildButtonColumn(Color color, IconData icon, String label) {
