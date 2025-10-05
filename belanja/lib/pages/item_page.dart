@@ -12,7 +12,14 @@ class ItemPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            Image.asset(item.imagePath, height: 200, fit: BoxFit.cover),
+            Hero(
+              tag: 'product-${item.name}',
+              child: Image.asset(
+                item.imagePath,
+                height: 200,
+                fit: BoxFit.cover,
+              ),
+            ),
             const SizedBox(height: 16),
             Text(
               item.name,
