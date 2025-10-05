@@ -9,13 +9,33 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(color: Colors.white),
-      child: const Center(
-        child: Text(
-          'Hello World',
-          textDirection: TextDirection.ltr,
-          style: TextStyle(fontSize: 32, color: Colors.black87),
+    return MaterialApp(
+      title: 'Hello World with Images',
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Hello World Layout')),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Container(
+              color: Colors.white,
+              padding: const EdgeInsets.all(16),
+              child: const Center(
+                child: Text(
+                  'Hello World',
+                  style: TextStyle(fontSize: 32, color: Colors.black87),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Image.asset('images/pic1.jpg', width: 100, height: 100),
+                Image.asset( 'images/pic2.jpg', width: 100, height: 100),
+                Image.asset('images/pic3.jpg', width: 100, height: 100),
+              ],
+            ),
+          ],
         ),
       ),
     );
