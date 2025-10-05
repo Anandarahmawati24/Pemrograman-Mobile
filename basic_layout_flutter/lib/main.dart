@@ -9,6 +9,36 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final stars = Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        Icon(Icons.star, color: Colors.green[500]),
+        const Icon(Icons.star, color: Colors.black),
+        const Icon(Icons.star, color: Colors.black),
+      ],
+    );
+
+    final ratings = Container(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          stars,
+          const Text(
+            '170 Reviews',
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'Roboto',
+              letterSpacing: 0.5,
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
+    );
     return MaterialApp(
       title: 'Hello World with Images',
       home: Scaffold(
@@ -56,18 +86,7 @@ class MyApp extends StatelessWidget {
             ),
 
             const SizedBox(height: 16),
-
-            // Row bintang
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.star, color: Colors.green[500]),
-                Icon(Icons.star, color: Colors.green[500]),
-                Icon(Icons.star, color: Colors.green[500]),
-                const Icon(Icons.star, color: Colors.black),
-                const Icon(Icons.star, color: Colors.black),
-              ],
-            ),
+            ratings,
           ],
         ),
       ),
