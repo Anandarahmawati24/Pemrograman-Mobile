@@ -8,10 +8,36 @@ class ItemPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(item.name)),
-      body: Center(
-        child: Text(
-          'Harga: Rp ${item.price}',
-          style: const TextStyle(fontSize: 24),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Image.asset(item.imagePath, height: 200, fit: BoxFit.cover),
+            const SizedBox(height: 16),
+            Text(
+              item.name,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Harga: Rp ${item.price}',
+              style: const TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 8),
+            Text('Stok: ${item.stock}', style: const TextStyle(fontSize: 16)),
+            const SizedBox(height: 8),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.star, color: Colors.yellow[700]),
+                const SizedBox(width: 4),
+                Text(
+                  item.rating.toString(),
+                  style: const TextStyle(fontSize: 16),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
