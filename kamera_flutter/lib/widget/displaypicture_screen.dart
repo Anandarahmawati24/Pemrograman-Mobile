@@ -1,19 +1,62 @@
-import 'package:flutter/material.dart';
 import 'dart:io';
+import 'package:flutter/material.dart';
+import 'filter_selector.dart';
 
-// A widget that displays the picture taken by the user.
-class DisplayPictureScreen extends StatelessWidget {
+class DisplayPictureScreen extends StatefulWidget {
   final String imagePath;
-
   const DisplayPictureScreen({super.key, required this.imagePath});
+
+  @override
+  State<DisplayPictureScreen> createState() => _DisplayPictureScreenState();
+}
+
+class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
+  final List<Color> _filters = [
+    Colors.white,
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.yellow,
+  ];
+
+  Color _selectedFilter = Colors.white;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Display the Picture - 2341720048')),
-      // The image is stored as a file on the device. Use the `Image.file`
-      // constructor with the given path to display the image.
-      body: Image.file(File(imagePath)),
+      appBar: AppBar(title: const Text("Filter your Photo")),
+      backgroundColor: Colors.black,
+      body: Column(
+        children: [
+          // FOTO FULLSCREEN
+          Expanded(
+            child: ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                _selectedFilter.withOpacity(0.5),
+                BlendMode.hardLight,
+              ),
+              child: Image.file(
+                File(widget.imagePath),
+                fit: BoxFit.cover,
+                width: double.infinity,
+              ),
+            ),
+          ),
+
+          // CAROUSEL FILTER
+          SizedBox(
+            height: 100,
+            child: FilterSelector(
+              filters: _filters,
+              onFilterChanged: (color) {
+                setState(() {
+                  _selectedFilter = color;
+                });
+              },
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
