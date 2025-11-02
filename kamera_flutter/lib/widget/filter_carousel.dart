@@ -1,7 +1,6 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'filter_selector.dart';
-import 'dart:io';
-
 
 @immutable
 class PhotoFilterCarousel extends StatefulWidget {
@@ -35,9 +34,9 @@ class _PhotoFilterCarouselState extends State<PhotoFilterCarousel> {
         children: [
           Positioned.fill(child: _buildPhotoWithFilter()),
           Positioned(
-            left: 0,
-            right: 0,
-            bottom: 0,
+            left: 0.0,
+            right: 0.0,
+            bottom: 0.0,
             child: _buildFilterSelector(),
           ),
         ],
@@ -60,6 +59,6 @@ class _PhotoFilterCarouselState extends State<PhotoFilterCarousel> {
   }
 
   Widget _buildFilterSelector() {
-    return FilterSelector(onFilterChanged: _onFilterChanged, filters: _filters);
+    return FilterSelector(filters: _filters, onFilterChanged: _onFilterChanged, imagePath: widget.imagePath);
   }
 }

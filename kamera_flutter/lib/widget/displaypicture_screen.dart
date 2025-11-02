@@ -17,6 +17,11 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
     Colors.green,
     Colors.blue,
     Colors.yellow,
+    Colors.purple,
+    Colors.orange,
+    Colors.teal,
+    Colors.indigo,
+    Colors.pink,
   ];
 
   Color _selectedFilter = Colors.white;
@@ -24,11 +29,14 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Filter your Photo")),
+      appBar: AppBar(
+        title: const Text("Filter Your Photo"), 
+        backgroundColor: Colors.black,
+      ),
       backgroundColor: Colors.black,
       body: Column(
         children: [
-          // FOTO FULLSCREEN
+          // FOTO FULLSCREEN DENGAN FILTER
           Expanded(
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(
@@ -45,9 +53,10 @@ class _DisplayPictureScreenState extends State<DisplayPictureScreen> {
 
           // CAROUSEL FILTER
           SizedBox(
-            height: 100,
+            height: 120,
             child: FilterSelector(
               filters: _filters,
+              imagePath: widget.imagePath, 
               onFilterChanged: (color) {
                 setState(() {
                   _selectedFilter = color;
