@@ -34,3 +34,14 @@
 ![Layout](images/prak2.gif)
 
 #### **Jawab:** Pada langkah 9 tampilan aplikasi memang terlihat sama seperti hasil Praktikum 1, tetapi kini datanya tidak lagi dikelola langsung oleh widget melalui variabel lokal. Sebagai gantinya, data Plan sudah dipindahkan ke dalam InheritedNotifier melalui PlanProvider. Dengan perubahan ini, setiap perubahan pada tasks akan memicu pembaruan UI secara otomatis melalui mekanisme listenable.
+
+## Praktikum 3: Membuat State di Multiple Screens
+
+### 2. Berdasarkan Praktikum 3 yang telah Anda lakukan, jelaskan maksud dari gambar diagram berikut ini!
+**Jawab:** Diagram tersebut menunjukkan perpindahan state ketika berpindah halaman menggunakan Navigator.push.
+Di halaman pertama (PlanCreatorScreen), struktur widget masih sederhana dan hanya menampilkan input serta daftar rencana. Saat pengguna memilih sebuah rencana, aplikasi berpindah ke halaman kedua (PlanScreen). Diagram kanan menjelaskan bahwa halaman baru memiliki state sendiri dan tetap terhubung ke PlanProvider, sehingga perubahan task di halaman kedua tetap memengaruhi data utama. Intinya, diagram itu menjelaskan aliran state yang tetap konsisten meskipun berada di dua screen berbeda.
+
+### 3. Lakukan capture hasil dari Langkah 14 berupa GIF, kemudian jelaskan apa yang telah Anda buat!
+![Layout](images/prak3.gif)
+
+#### **Jawab:** Pada Langkah 14, ditunjukkan bahwa pengguna dapat membuat plan baru, kemudian masuk ke halaman detail plan, menambah task, mengubah status task, dan data langsung ter-update. Aplikasi memperlihatkan bahwa integrasi state antar-halaman sudah berjalan dengan benar: rencana baru muncul di daftar, task dapat ditambah, diedit, atau ditandai selesai, dan perubahan tersebut tersimpan selama aplikasi masih berjalan.
