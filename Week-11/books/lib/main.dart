@@ -36,12 +36,12 @@ class _FuturePageState extends State<FuturePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Back from the Future')),
+      appBar: AppBar(title: const Text('Back from the Future Nanda')),
       body: Center(
         child: Column(
           children: <Widget>[
             const Spacer(),
-            ElevatedButton(
+            /*ElevatedButton(
               child: Text('GO!'),
               onPressed: () {
                 setState(() {});
@@ -54,6 +54,12 @@ class _FuturePageState extends State<FuturePage> {
                       result = 'An error occurred';
                       setState(() {});
                     });
+              },
+            ),*/
+            ElevatedButton(
+              child: Text('GO!'),
+              onPressed: () {
+                count();
               },
             ),
             const Spacer(),
@@ -72,5 +78,30 @@ class _FuturePageState extends State<FuturePage> {
     const path = '/books/v1/volumes/junbDwAAQBAJ';
     Uri url = Uri.https(authority, path);
     return http.get(url);
+  }
+
+  Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
+  }
+
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  Future count() async {
+    int total = 0;
+    total = await returnOneAsync();
+    total += await returnTwoAsync();
+    total += await returnThreeAsync();
+    setState(() {
+      result = total.toString();
+    });
   }
 }
