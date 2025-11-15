@@ -18,3 +18,8 @@
 **Jawab:** Pada langkah 1, tiga method returnOneAsync(), returnTwoAsync(), dan returnThreeAsync() dibuat sebagai fungsi asynchronous yang masing-masing menunggu selama 3 detik menggunakan await Future.delayed(), lalu mengembalikan angka 1, 2, dan 3. Ini mensimulasikan proses yang membutuhkan waktu, seperti memanggil API. Pada langkah 2, method count() dibuat untuk menjalankan ketiga fungsi async tersebut secara berurutan dengan await, sehingga total waktu tunggunya menjadi 9 detik. Setelah ketiganya selesai, nilai yang dikembalikan dijumlahkan sehingga menghasilkan angka 6. Method ini menunjukkan bagaimana async/await membuat alur asynchronous lebih mudah dibaca tanpa harus menggunakan callback then().
 
 ![Layout](images/prak2.gif)
+
+### Soal 5 Jelaskan maksud dari langkah 2 praktikum 3
+**Jawab:** Pada langkah 2, variabel Completer digunakan untuk membuat sebuah Future yang dapat diselesaikan secara manual. Method getNumber() membuat objek Completer<int>(), menjalankan fungsi calculate(), lalu langsung mengembalikan completer.future agar bisa ditunggu oleh UI. Sementara itu, method calculate() menjalankan proses async selama 5 detik, lalu memanggil completer.complete(42) untuk menyelesaikan Future tersebut dengan nilai 42. Dengan pola ini, kita bisa mengontrol sendiri kapan Future dianggap selesai, bukan otomatis dari return function, sehingga memberi fleksibilitas lebih dalam mengatur alur asynchronous.
+
+![Layout](images/prak3_1.gif)
